@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
+import PropTypes from 'prop-types';
 import Cropper from 'react-cropper';
 import classNames from 'classnames';
 
@@ -503,6 +504,6 @@ export default class CropperControls extends React.Component {
 }
 
 CropperControls.PropTypes = {
-  onPhotoCropped: React.PropTypes.func.isRequired,
-  src: React.PropTypes.string.isRequired
+  onPhotoCropped: PropTypes.func.isRequired,
+  src: PropTypes.string.isRequired
 };
