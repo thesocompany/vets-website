@@ -1,82 +1,25 @@
 {
   "data": {
-    "standardClaim": true,
-    "view:noFdcWarning": {},
-    "view:hasSeparationPay": false,
-    "hasTrainingPay": false,
+    "view:claimType": {
+      "view:claimingIncrease": true
+    },
     "isVaEmployee": false,
     "homelessOrAtRisk": "no",
     "phoneAndEmail": {
-      "primaryPhone": "8035555555",
-      "emailAddress": "bill@gmail.com"
+      "primaryPhone": "4445551212",
+      "emailAddress": "test2@test1.net"
     },
     "mailingAddress": {
       "country": "USA",
-      "addressLine1": "100 cool ln.",
-      "city": "Charleston",
-      "state": "SC",
-      "zipCode": "29412"
+      "addressLine1": "123 Main",
+      "city": "Bigcity",
+      "state": "AK",
+      "zipCode": "12345"
     },
     "view:contactInfoDescription": {},
     "view:hasEvidence": false,
-    "view:unemployable": false,
-    "view:aidAndAttendance": false,
-    "view:modifyingHome": false,
-    "view:modifyingCar": false,
     "view:powStatus": false,
-    "form781aUpload": [
-      {
-        "name": "781aForm.pdf",
-        "confirmationCode": "a9915db8-5083-4a68-9372-35404f0c56dc",
-        "attachmentId": "L229"
-      }
-    ],
-    "view:upload781aChoice": "upload",
-    "view:upload781aChoiceHelp": {},
-    "form781Upload": [
-      {
-        "name": "781Form.pdf",
-        "confirmationCode": "c22924e2-3024-450b-8182-46df6e189060",
-        "attachmentId": "L228"
-      }
-    ],
-    "view:upload781Choice": "upload",
-    "view:upload781ChoiceHelp": {},
-    "view:selectablePtsdTypes": {
-      "view:combatPtsdType": true,
-      "view:mstPtsdType": true
-    },
-    "view:ptsdTypeHelp": {},
-    "newDisabilities": [
-      {
-        "condition": "PTSD personal trauma",
-        "view:descriptionInfo": {}
-      }
-    ],
-    "view:newDisabilities": true,
-    "serviceInformation": {
-      "reservesNationalGuardService": {
-        "view:isTitle10Activated": false,
-        "obligationTermOfServiceDateRange": {
-          "from": "2007-05-22",
-          "to": "2008-06-05"
-        },
-        "unitName": "billy"
-      },
-      "servicePeriods": [
-        {
-          "serviceBranch": "Air Force Reserve",
-          "dateRange": {
-            "from": "2001-03-21",
-            "to": "2014-07-21"
-          }
-        }
-      ],
-      "view:militaryHistoryNote": {}
-    },
-    "servedInCombatZonePost911": false,
-    "view:hasMilitaryRetiredPay": false,
-    "view:hasAlternateName": false,
+    "view:newDisabilities": false,
     "ratedDisabilities": [
       {
         "name": "Diabetes mellitus0",
@@ -86,7 +29,8 @@
         "decisionCode": "SVCCONNCTED",
         "decisionText": "Service Connected",
         "ratingPercentage": 100,
-        "disabilityActionType": "NONE"
+        "disabilityActionType": "NONE",
+        "view:selected": true
       },
       {
         "name": "Diabetes mellitus1",
@@ -100,6 +44,31 @@
       }
     ],
     "view:disabilitiesClarification": {},
+    "serviceInformation": {
+      "reservesNationalGuardService": {
+        "view:isTitle10Activated": false,
+        "obligationTermOfServiceDateRange": {
+          "from": "2007-05-22",
+          "to": "2008-06-05"
+        },
+        "unitName": "Unit name here"
+      },
+      "servicePeriods": [
+        {
+          "serviceBranch": "Air Force Reserve",
+          "dateRange": {
+            "from": "2001-03-21",
+            "to": "2014-07-21"
+          }
+        }
+      ],
+      "view:militaryHistoryNote": {}
+    },
+    "servedInCombatZonePost911": false,
+    "view:hasAlternateName": false,
+    "view:selectablePtsdTypes": {},
+    "view:ptsdTypeHelp": {},
+    "view:upload781ChoiceHelp": {},
     "incident0": {
       "unitAssignedDates": {},
       "incidentLocation": {
@@ -118,6 +87,7 @@
         "country": "USA"
       }
     },
+    "view:upload781aChoiceHelp": {},
     "secondaryIncident0": {
       "unitAssignedDates": {},
       "incidentLocation": {
@@ -147,12 +117,17 @@
     "view:ancillaryFormsWizardIntro": {},
     "view:unemployabilityHelp": {},
     "unemployability": {
+      "view:recordsInfo": {},
+      "view:unemployabilityDatesDesc": {},
       "view:grossIncomeAdditionalInfo": {},
       "view:supplementalBenefitsHelp": {},
       "view:substantiallyGainfulEmploymentInfo": {},
       "view:statementsAreTrue": {},
       "view:informOfReturnToWork": {}
     },
+    "view:privateMedicalFacility": {},
+    "view:upload4192Choice": {},
+    "view:downloadInfo": {},
     "view:vaMedicalRecordsIntro": {},
     "view:uploadPrivateRecordsQualifier": {
       "view:aboutPrivateMedicalRecords": {},
@@ -164,14 +139,13 @@
       "view:hasPrefilledBank": true
     },
     "view:waiveRetirementPayDescription": {},
-    "primaryPhone": "4445551212",
-    "emailAddress": "test2@test1.net",
+    "standardClaim": false,
+    "view:fdcWarning": {},
     "view:originalBankAccount": {
       "view:bankAccountType": "Checking",
       "view:bankAccountNumber": "*********1234",
       "view:bankRoutingNumber": "*****2115",
       "view:bankName": "Comerica"
-    },
-    "privacyAgreementAccepted": true
+    }
   }
 }
