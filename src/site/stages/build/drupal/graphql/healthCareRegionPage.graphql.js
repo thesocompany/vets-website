@@ -4,8 +4,11 @@
  */
 const healthCareLocalFacilities = require('./facilities-fragments/healthCareLocalFacility.node.graphql');
 const healthCareRegionHealthServices = require('./facilities-fragments/healthCareRegionHealthServices.node.graphql');
+const patientFamilyServices = require('./facilities-fragments/patientFamilyServices.node.graphql');
 
 module.exports = `
+  ${patientFamilyServices}
+
   fragment healthCareRegionPage on NodeHealthCareRegionPage {
     entityUrl {
       ... on EntityCanonicalUrl {
@@ -44,6 +47,10 @@ module.exports = `
       	... listOfLinkTeasers
       }
     }
+    fieldPatientFamilyServicesIn {
+        processed
+    }
+    ... patientFamilyServices
     ${healthCareLocalFacilities}
     newsStoryTeasers: reverseFieldOfficeNode(filter: {
       conditions: [
