@@ -16,8 +16,8 @@ module.exports = `
   ${landingPage}
   ${page}
   ${healthCareRegionPage}
-  ${newsStoryPage}
   ${pressReleasePage}
+  ${newsStoryPage}
 
   query GetAllPages {
     nodeQuery(limit: 500) {
