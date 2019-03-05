@@ -67,7 +67,6 @@ function createHealthCareRegionListPages(page, drupalPagePath, files) {
   const relatedLinks = { fieldRelatedLinks: page.fieldRelatedLinks };
   const sidebar = { facilitySidebar: page.facilitySidebar };
 
-
   // Create the detail page for healthcare local facilities
   if (page.mainFacilities !== undefined || page.otherFacilities !== undefined) {
     for (const facility of [
