@@ -3,8 +3,11 @@
  * Example: /pittsburgh_health_care_system
  */
 const healthCareLocalFacilities = require('./facilities-fragments/healthCareLocalFacility.node.graphql');
+const patientFamilyServices = require('./facilities-fragments/patientFamilyServices.node.graphql');
 
 module.exports = `
+  ${patientFamilyServices}
+
   fragment healthCareRegionPage on NodeHealthCareRegionPage {
     entityUrl {
       ... on EntityCanonicalUrl {
@@ -43,6 +46,10 @@ module.exports = `
       	... listOfLinkTeasers
       }
     }
+    fieldPatientFamilyServicesIn {
+        processed
+    }
+    ... patientFamilyServices
     ${healthCareLocalFacilities}
     newsStoryTeasers: reverseFieldOfficeNode(filter: {
       conditions: [
