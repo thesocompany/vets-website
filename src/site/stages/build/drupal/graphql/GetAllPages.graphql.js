@@ -32,3 +32,5 @@ module.exports = `
     ${sidebarQuery}
   }
 `;
+
+console.log(module.exports);
