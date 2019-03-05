@@ -104,11 +104,29 @@ module.exports = `
               }
             }
           }
-          
+        entityUrl {
+          path
+        }
+      }      
+    }
+    allPressReleaseTeasers: reverseFieldOfficeNode(filter: {
+      conditions: [
+        { field: "type", value: "press_release"}
+        { field: "status", value: "1"}
+      ]} sort: {field: "field_release_date", direction: DESC } limit: 100)
+    {
+      entities {
+        ... on NodePressRelease {
+          title
           entityUrl {
             path
           }
-        }      
+          fieldReleaseDate {
+            value
+          }
+          fieldIntroText
+        }
+      }
     }
     fieldClinicalHealthCareServi {
       processed
