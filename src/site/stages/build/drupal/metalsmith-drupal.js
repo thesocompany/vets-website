@@ -252,6 +252,7 @@ function pipeDrupalPagesIntoMetalsmith(contentData, files) {
         pageCompiled = Object.assign(page, sidebarNavItems);
         break;
       case 'health_care_region_page':
+      case 'press_release':
         pageCompiled = Object.assign(page, facilitySidebarNavItems);
         break;
       default:
