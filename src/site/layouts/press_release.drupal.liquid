@@ -97,6 +97,8 @@
 <div id="content" class="interior">
     <main class="va-l-detail-page">
         <div class="usa-grid usa-grid-full">
+            {% include 'src/site/navigation/facility_sidebar_nav.drupal.liquid' with facilitySidebar %}
+          <div class="usa-width-three-fourths">
             <article class="usa-content">
                 <section class="vads-u-margin-bottom--5">
                     <h1>{{ title }}</h1>
@@ -154,6 +156,7 @@
                 </section>
                 <a href="#">See all press releases</a>
             </article>
+          </div>
         </div>
     </main>
 </div>
