@@ -70,7 +70,7 @@ function getDrupalClient(buildOptions) {
       throw new Error(`HTTP error: ${response.status}: ${response.statusText}`);
     },
 
-    getAllPages(onlyPublishedContent = true) {
+    getAllPages(onlyPublishedContent = false) {
       return this.query({
         query: GET_ALL_PAGES,
         variables: {

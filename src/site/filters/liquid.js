@@ -132,4 +132,14 @@ module.exports = function registerFilters() {
 
     return JSON.stringify(getDeepLinks(currentPath, linksArray));
   };
+
+  liquid.filters.where = (...args) => {
+    const [list, field, value] = args;
+    return list.filter(item => {
+      if (typeof value === 'undefined') {
+        return !!item[field];
+      }
+      return item[field] === value;
+    });
+  };
 };
