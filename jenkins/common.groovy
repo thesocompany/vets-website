@@ -119,7 +119,7 @@ def build(String ref, dockerContainer, Boolean contentOnlyBuild) {
       def assetSource = contentOnlyBuild ? ref : 'local'
 
       // for (int i=0; i<VAGOV_BUILDTYPES.size(); i++) {
-      for (int i=0; i<1; i++) {
+      for (int i=1; i<2; i++) {
         def envName = VAGOV_BUILDTYPES.get(i)
         def buildDetails = buildDetails(envName, ref)
         def drupalAddress = DRUPAL_ADDRESSES.get(envName)
