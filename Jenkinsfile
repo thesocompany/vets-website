@@ -20,41 +20,41 @@ node('vetsgov-general-purpose') {
   // setupStage
   dockerContainer = commonStages.setup()
 
-  stage('Lint|Security|Unit') {
-    if (params.cmsEnvBuildOverride != 'none') { return }
+  // stage('Lint|Security|Unit') {
+  //   if (params.cmsEnvBuildOverride != 'none') { return }
 
-    try {
-      parallel (
-        lint: {
-          dockerContainer.inside(commonStages.DOCKER_ARGS) {
-            sh "cd /application && npm --no-color run lint"
-          }
-        },
+  //   try {
+  //     parallel (
+  //       lint: {
+  //         dockerContainer.inside(commonStages.DOCKER_ARGS) {
+  //           sh "cd /application && npm --no-color run lint"
+  //         }
+  //       },
 
-        // Check package.json for known vulnerabilities
-        security: {
-          retry(3) {
-            dockerContainer.inside(commonStages.DOCKER_ARGS) {
-              sh "cd /application && npm run security-check"
-            }
-          }
-        },
+  //       // Check package.json for known vulnerabilities
+  //       security: {
+  //         retry(3) {
+  //           dockerContainer.inside(commonStages.DOCKER_ARGS) {
+  //             sh "cd /application && npm run security-check"
+  //           }
+  //         }
+  //       },
 
-        unit: {
-          dockerContainer.inside(commonStages.DOCKER_ARGS) {
-            sh "cd /application && npm --no-color run test:coverage"
-          }
-        }
-      )
-    } catch (error) {
-      commonStages.slackNotify()
-      throw error
-    } finally {
-      dir("vets-website") {
-        step([$class: 'JUnitResultArchiver', testResults: 'test-results.xml'])
-      }
-    }
-  }
+  //       unit: {
+  //         dockerContainer.inside(commonStages.DOCKER_ARGS) {
+  //           sh "cd /application && npm --no-color run test:coverage"
+  //         }
+  //       }
+  //     )
+  //   } catch (error) {
+  //     commonStages.slackNotify()
+  //     throw error
+  //   } finally {
+  //     dir("vets-website") {
+  //       step([$class: 'JUnitResultArchiver', testResults: 'test-results.xml'])
+  //     }
+  //   }
+  // }
 
   // Perform a build for each build type
   commonStages.build(ref, dockerContainer, params.cmsEnvBuildOverride != 'none')
@@ -66,13 +66,13 @@ node('vetsgov-general-purpose') {
       try {
         parallel (
           e2e: {
-            sh "export IMAGE_TAG=${commonStages.IMAGE_TAG} && docker-compose -p e2e up -d && docker-compose -p e2e run --rm --entrypoint=npm -e BABEL_ENV=test -e BUILDTYPE=vagovprod vets-website --no-color run nightwatch:docker"
+            // sh "export IMAGE_TAG=${commonStages.IMAGE_TAG} && docker-compose -p e2e up -d && docker-compose -p e2e run --rm --entrypoint=npm -e BABEL_ENV=test -e BUILDTYPE=vagovprod vets-website --no-color run nightwatch:docker"
             // Temporarily disabling puppeteer tests due to flakiness
-            // sh "docker-compose -p e2e run --rm --entrypoint npm -e BABEL_ENV=test -e BUILDTYPE=vagovprod vets-website --no-color run test:puppeteer:docker"
+            sh "docker-compose -p e2e run --rm --entrypoint npm -e BABEL_ENV=test -e BUILDTYPE=vagovprod vets-website --no-color run test:puppeteer:docker"
           },
 
           accessibility: {
-            sh "export IMAGE_TAG=${commonStages.IMAGE_TAG} && docker-compose -p accessibility up -d && docker-compose -p accessibility run --rm --entrypoint=npm -e BABEL_ENV=test -e BUILDTYPE=vagovprod vets-website --no-color run nightwatch:docker -- --env=accessibility"
+            // sh "export IMAGE_TAG=${commonStages.IMAGE_TAG} && docker-compose -p accessibility up -d && docker-compose -p accessibility run --rm --entrypoint=npm -e BABEL_ENV=test -e BUILDTYPE=vagovprod vets-website --no-color run nightwatch:docker -- --env=accessibility"
           }
         )
       } catch (error) {
