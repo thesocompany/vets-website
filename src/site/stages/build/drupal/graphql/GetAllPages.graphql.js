@@ -18,6 +18,7 @@ const eventPage = require('./eventPage.graphql');
 const facilitySidebarQuery = require('./navigation-fragments/facilitySidebar.nav.graphql');
 const icsFileQuery = require('./file-fragments/ics.file.graphql');
 const bioPage = require('./bioPage.graphql');
+const libraryPage = require('./libraryPage.graphql');
 /**
  * Queries for all of the pages out of Drupal
  * To execute, run this query at http://staging.va.agile6.com/graphql/explorer.
@@ -33,6 +34,7 @@ module.exports = `
   ${pressReleasePage}
   ${newsStoryPage}
   ${eventPage}
+  ${libraryPage}
   ${bioPage}
 
   query GetAllPages($today: String!, $onlyPublishedContent: Boolean!) {
@@ -50,6 +52,7 @@ module.exports = `
         ... pressReleasePage
         ... newsStoryPage
         ... eventPage
+        ... libraryPage
         ... bioPage
       }
     }
