@@ -611,8 +611,13 @@ class VAMap extends Component {
           find locations that offer the specific service you’re looking for.
         </div>
         {isMobile.any ? this.renderMobileView() : this.renderDesktopView()}
+        <button
+        className="usa-button usa-button-primary va-button-primary">
+         Give VA Facility Feedback
+        </button>
       </div>
       /* eslint-enable prettier/prettier */
+      
     );
   }
 }
