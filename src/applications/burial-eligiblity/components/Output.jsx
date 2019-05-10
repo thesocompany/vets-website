@@ -6,11 +6,9 @@ import React from 'react';
 //     }
 // }
 
-export default function Output({ output }) {
-  return (
-    <div>
-      hi from the output component
-      {output}
-    </div>
-  );
-}
+export default props => (
+  <div>
+    hi from the output component@@@:
+    {props.output}
+  </div>
+);
