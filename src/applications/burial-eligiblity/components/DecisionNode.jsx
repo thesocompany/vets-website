@@ -28,7 +28,7 @@ export class DecisionNode extends React.Component {
             value: ele.id,
           }))}
           value={{
-            value: Number(this.state.value.value),
+            value: this.state.value.value,
             dirty: this.state.value.dirty,
           }}
           required={false}
